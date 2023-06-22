@@ -55,18 +55,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <ul class="nav navbar-nav navbar-right mb-2 mb-lg-0">
+            <li class="greetings"></li>
             <li class="nav-item ms-3">
               <a class="nav-link d-flex align-items-center active" href="#"
                 ><i class="fa-solid fa-house"></i
                 ><span class="ms-1">Home</span></a
               >
             </li>
-            <!-- <li class="nav-item ms-3">
+            <li class="nav-item ms-3">
               <a class="nav-link d-flex align-items-center" href="#"
                 ><i class="fa-solid fa-shop"></i
                 ><span class="ms-1">Shop</span></a
               >
-            </li> -->
+            </li>
             <li class="nav-item ms-3">
               <a class="nav-link d-flex align-items-center" href="#"
                 ><i class="fa-solid fa-cart-shopping"></i
@@ -82,7 +83,9 @@
                 ><i class="fa-solid fa-power-off"></i
                 ><span class="ms-1">Login</span></a
               >
-              <a class="logoutBtn nav-link d-flex align-items-center profile-hide" href="#"
+              <a
+                class="logoutBtn nav-link d-flex align-items-center profile-hide"
+                href="#"
                 ><i class="fa-solid fa-power-off"></i
                 ><span class="ms-1">Logout</span></a
               >
@@ -142,7 +145,13 @@
                 Signup
               </button>
             </div>
-            <button id="google-signin-button"><img src="https://img.icons8.com/fluency/30/google-logo.png" alt="google-logo"/> <span>Sign up with Google</span></button>
+            <button id="google-signin-button">
+              <img
+                src="https://img.icons8.com/fluency/30/google-logo.png"
+                alt="google-logo"
+              />
+              <span>Sign In with Google</span>
+            </button>
           </div>
         </div>
       </div>
@@ -202,17 +211,67 @@
           </button>
         </div>
       </div>
-      <div class="categories-box">
-        <h1 class="my-3">SHOP BY CATEGORY</h1>
-        <div class="categories">
-          <div class="category"><img src="./images/men.png" /></div>
-          <div class="fake-images"><img src="./images/hangers.png" /></div>
-          <div class="fake-images"><img src="./images/shopping.jpg" /></div>
-          <div class="category"><img src="./images/women.png" /></div>
-          <div class="category"><img src="./images/accessories.png" /></div>
-          <div class="fake-images"><img src="./images/handbag.png" /></div>
-          <div class="fake-images"><img src="./images/gadgets.png" /></div>
-          <div class="category"><img src="./images/electronics.png" /></div>
+      <div class="canvas">
+        <div class="home canvas-item">
+          <div class="categories-box">
+            <h1 class="my-3">SHOP BY CATEGORY</h1>
+            <div class="categories">
+              <div class="category"><img src="./images/men.png" /></div>
+              <div class="fake-images"><img src="./images/hangers.png" /></div>
+              <div class="fake-images"><img src="./images/shopping.jpg" /></div>
+              <div class="category"><img src="./images/women.png" /></div>
+              <div class="category"><img src="./images/accessories.png" /></div>
+              <div class="fake-images"><img src="./images/handbag.png" /></div>
+              <div class="fake-images"><img src="./images/gadgets.png" /></div>
+              <div class="category"><img src="./images/electronics.png" /></div>
+            </div>
+          </div>
+          <div class="footer1">
+            <div class="socialMedia">
+              <p>show us some love ❤ on social media</p>
+              <ul class="socialMedia_ul">
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-facebook"></i></li>
+                <li><i class="fa-brands fa-youtube"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-pinterest"></i></li>
+              </ul>
+            </div>
+            <div class="appStores">
+              <p>EXPERIENCE THE INSTYLE MOBILE APP</p>
+              <div class="app_images">
+                <a
+                  ><img src="./images/googlePlayBtn.jpeg" alt="googlePlayButton"
+                /></a>
+                <a
+                  ><img src="./images/appleStoreBtn.jpeg" alt="appleStoreButton"
+                /></a>
+              </div>
+            </div>
+            <div class="contact">
+              <p>FOR ANY HELP CALL US AT 1800-267-4444</p>
+              <p>(Monday to Saturday, 8AM to 10PM)</p>
+            </div>
+          </div>
+          <div class="footer2">
+            <div class="policy">
+              <ul>
+                <li>Terms & Conditions</li>
+                <li>Shipping Policy</li>
+                <li>Cancellation Policy</li>
+                <li>Privacy Policy</li>
+              </ul>
+            </div>
+            <div class="copyrights">
+              © 2023 InStyle E-Retail Pvt. Ltd. All Rights Reserved
+            </div>
+          </div>
+        </div>
+        <div class="shop canvas-item hide">
+          Shop
+        </div>
+        <div class="cart canvas-item hide">
+          Cart
         </div>
       </div>
     </main>

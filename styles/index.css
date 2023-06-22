@@ -27,9 +27,22 @@ main{
   padding-top: 60px;
 }
 
+.greetings{
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+
 .nav-link i,
 .nav-link span {
-  color: white;
+  color: var(--beige-color);
+}
+.nav-link:hover{
+  scale: 105%;
+}
+.nav-item .active i, .nav-item .active span{
+  color: var(--white-color);
 }
 .navbar-brand {
   font-family: var(--secondary-font-family);
@@ -124,4 +137,76 @@ main{
 .btn-primary:hover, .btn-secondary:hover{
   background-color: var(--semi-black);
   border: none;
+}
+.footer1{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--semi-black);
+  color: var(--white-color)
+}
+.appStores a>img{
+  width: 100px;
+}
+.app_images{
+  display: flex;
+  justify-content: space-around;
+}
+.socialMedia_ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.socialMedia_ul li{
+  list-style: none;
+}
+@media screen and (max-width:700px){
+  .footer1{
+    gap: 40px;
+  }
+}
+.footer2{
+  background-color: #212529;
+  padding: 10px 0px;
+  color: var(--white-color);
+}
+.policy ul{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.policy ul>li{
+  list-style: none;
+}
+.copyrights{
+  text-align: center;
+  border-top: 1px solid var(--white-color);
+  padding-top: 10px;
+}
+@media screen and (max-width:634px){
+  .policy ul{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.toast {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: var(--beige-color);
+  color: var(--white-color);
+  padding: 16px;
+  border-radius: 4px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
 }

@@ -4,6 +4,8 @@ let loginOrSignUp=document.querySelector(".loginOrSignUp");
 let loginBtn=document.querySelector(".loginBtn");
 let signupBtn=document.querySelector(".signupBtn");
 let modalTitle=document.querySelector(".modal-title");
+let navBarRight=document.querySelector(".navbar-right");
+let canvasItems=document.querySelectorAll(".canvas-item");
 
 login.addEventListener("click",()=>{
     login.classList.add("active");
@@ -35,3 +37,36 @@ document.querySelector(".reset").addEventListener("click",()=>{
     }
 })
 
+//clear contents of form when model opens
+document.querySelector(".loginProfileBtn").addEventListener("click",()=>{
+    let inputs=loginOrSignUp.querySelectorAll("input");
+    for(let i=0;i<inputs.length;i++){
+        inputs[i].value="";
+    }
+})
+
+
+//making nav-items on nav-bar active except login and logout
+let navLinks=navBarRight.querySelectorAll(".nav-link");
+for(let i=0;i<navLinks.length-2;i++){
+    navLinks[i].addEventListener("click",()=>{
+        removeActiveState();
+        navLinks[i].classList.add("active");
+        hideCanvasItems();
+        canvasItems[i].classList.remove("hide");
+    })
+}
+
+//remove active class for present active nav-link
+function removeActiveState(){
+    for(let i=0;i<navLinks.length-2;i++){
+        navLinks[i].classList.remove("active");
+    }
+}
+
+//hide all canvasItems
+function hideCanvasItems(){
+    for(let i=0;i<canvasItems.length;i++){
+        canvasItems[i].classList.add("hide");
+    }
+}
