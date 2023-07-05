@@ -70,3 +70,4 @@ function hideCanvasItems(){
         canvasItems[i].classList.add("hide");
     }
 }
+

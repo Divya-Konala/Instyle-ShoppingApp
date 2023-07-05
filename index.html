@@ -155,64 +155,88 @@
           </div>
         </div>
       </div>
-      <div class="carousel-box">
-        <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./images/poster1.png" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="./images/poster2.png" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="./images/poster3.png" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="./images/poster4.png" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="./images/poster5.png" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="./images/poster6.png" class="d-block w-100" alt="..." />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span aria-hidden="true"
-              ><i
-                class="fa-solid fa-2x fa-chevron-left"
-                style="color: #050206"
-              ></i
-            ></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span aria-hidden="true"
-              ><i
-                class="fa-solid fa-2x fa-chevron-right"
-                style="color: #050206"
-              ></i
-            ></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
       <div class="canvas">
         <div class="home canvas-item">
+          <div class="carousel-box">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./images/poster1.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./images/poster2.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./images/poster3.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./images/poster4.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./images/poster5.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./images/poster6.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span aria-hidden="true"
+                  ><i
+                    class="fa-solid fa-2x fa-chevron-left"
+                    style="color: #050206"
+                  ></i
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span aria-hidden="true"
+                  ><i
+                    class="fa-solid fa-2x fa-chevron-right"
+                    style="color: #050206"
+                  ></i
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
           <div class="categories-box">
             <h1 class="my-3">SHOP BY CATEGORY</h1>
             <div class="categories">
@@ -241,10 +265,14 @@
               <p>EXPERIENCE THE INSTYLE MOBILE APP</p>
               <div class="app_images">
                 <a
-                  ><img src="./images/googlePlayBtn.jpeg" alt="googlePlayButton"
+                  ><img
+                    src="./images/googlePlayBtn.jpeg"
+                    alt="googlePlayButton"
                 /></a>
                 <a
-                  ><img src="./images/appleStoreBtn.jpeg" alt="appleStoreButton"
+                  ><img
+                    src="./images/appleStoreBtn.jpeg"
+                    alt="appleStoreButton"
                 /></a>
               </div>
             </div>
@@ -268,11 +296,197 @@
           </div>
         </div>
         <div class="shop canvas-item hide">
-          Shop
+          <div class="filters">
+            <div class="filter-categories">
+              <section>
+                <h3>Categories</h3>
+                <ul>
+                  <li>
+                    <input id="men" type="checkbox" name="category" class="filters1" />
+                    <label for="men">Men's Clothing</label>
+                  </li>
+                  <li>
+                    <input id="women" type="checkbox" name="category" class="filters1" />
+                    <label for="women">Women's Clothing</label>
+                  </li>
+                  <li>
+                    <input id="jewellery" type="checkbox" name="category" class="filters1"/>
+                    <label for="jewellery">Jewellery</label>
+                  </li>
+                  <li>
+                    <input id="electronics" type="checkbox" name="category" class="filters1" />
+                    <label for="electronics">Electronics</label>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h3>Rating</h3>
+                <input
+                  type="range"
+                  id="range"
+                  min="0"
+                  max="5"
+                  value="0"
+                  list="values"
+                  class="filters1"
+                />
+                <datalist id="values">
+                  <option value="0" label="0"></option>
+                  <option value="1"></option>
+                  <option value="2"></option>
+                  <option value="3"></option>
+                  <option value="4"></option>
+                  <option value="5" label="5"></option>
+                </datalist>
+              </section>
+              <section>
+                <h3>Price Range</h3>
+                <ul>
+                  <li>
+                    <input id="0-25" type="checkbox" name="prange" class="filters1" />
+                    <label for="0-25">$0 to $25</label>
+                  </li>
+                  <li>
+                    <input id="25-50" type="checkbox" name="prange" class="filters1" />
+                    <label for="25-50">$25 to $50</label>
+                  </li>
+                  <li>
+                    <input id="50-100" type="checkbox" name="prange" class="filters1" />
+                    <label for="50-100">$50 to $100</label>
+                  </li>
+                  <li>
+                    <input id="100on" type="checkbox" name="prange" class="filters1" />
+                    <label for="100on">$100 onwards</label>
+                  </li>
+                </ul>
+              </section>
+              <section class="buttons_section">
+                <button type="button" class="btn btn-secondary resetFilters">
+                  Reset
+                </button>
+                <button type="button" class="btn btn-primary filterBtn">
+                  Filter
+                </button>
+              </section>
+            </div>
+            <h3 style="text-align: center; margin: 0px 10px; font-family: var(--secondary-font-family); color: var(--beige-color);"> Keep Calm & Shop Online</h3>
+          </div>
+          <div class="products_catalog"></div>
+
+          <button
+            class="filter-button btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal1"
+            href="#"
+          >
+            <i class="fa-solid fa-2x fa-filter"></i><span class="ms-1"></span>
+          </button>
+
+          <!-- modal -->
+          <div
+            class="modal fade"
+            id="exampleModal1"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Filters</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="filter-categories">
+                    <section>
+                      <h3>Categories</h3>
+                      <ul>
+                        <li>
+                          <input id="men" type="checkbox" name="category" class="filters2" />
+                          <label for="men">Men's Clothing</label>
+                        </li>
+                        <li>
+                          <input id="women" type="checkbox" name="category" class="filters2" />
+                          <label for="women">Women's Clothing</label>
+                        </li>
+                        <li>
+                          <input
+                            id="jewellery"
+                            type="checkbox"
+                            name="category" class="filters2"
+                          />
+                          <label for="jewellery">Jewellery</label>
+                        </li>
+                        <li>
+                          <input
+                            id="electronics"
+                            type="checkbox"
+                            name="category" class="filters2"
+                          />
+                          <label for="electronics">Electronics</label>
+                        </li>
+                      </ul>
+                    </section>
+                    <section>
+                      <h3>Rating</h3>
+                      <input
+                        type="range"
+                        id="range"
+                        min="0"
+                        max="5"
+                        value="0"
+                        list="values" class="filters2"
+                      />
+                      <datalist id="values">
+                        <option value="0" label="0"></option>
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5" label="5"></option>
+                      </datalist>
+                    </section>
+                    <section>
+                      <h3>Price Range</h3>
+                      <ul>
+                        <li>
+                          <input id="0-25" type="checkbox" name="prange" class="filters2" />
+                          <label for="0-25">$0 to $25</label>
+                        </li>
+                        <li>
+                          <input id="25-50" type="checkbox" name="prange" class="filters2" />
+                          <label for="25-50">$25 to $50</label>
+                        </li>
+                        <li>
+                          <input id="50-100" type="checkbox" name="prange" class="filters2" />
+                          <label for="50-100">$50 to $100</label>
+                        </li>
+                        <li>
+                          <input id="100on" type="checkbox" name="prange" class="filters2" />
+                          <label for="100on">$100 onwards</label>
+                        </li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary resetFilters">
+                    Reset
+                  </button>
+                  <button type="button" class="btn btn-primary filterBtn">
+                    Filter
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="cart canvas-item hide">
-          Cart
-        </div>
+        <div class="cart canvas-item hide">Cart</div>
       </div>
     </main>
     <!-- bootstrap -->
@@ -288,5 +502,6 @@
     <!-- Google Sign-In API -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="./js/script.js"></script>
+    <script src="./js/shop.js"></script>
   </body>
 </html>
