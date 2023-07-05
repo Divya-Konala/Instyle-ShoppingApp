@@ -16,6 +16,9 @@ let inputFields={
     range2:false,
     range3:false,
     range4:false
+  },
+  search:{
+    value:""
   }
 }
 
@@ -56,6 +59,12 @@ function displayProducts(products){
 
 const filterProducts=()=>{
   let filteredProducts=[...allProducts];
+
+  if(inputFields.search.value!=""){
+    let inputValue=inputFields.search.value;
+    filteredProducts=filteredProducts.filter((item)=>item.title.toLowerCase().includes(inputValue.toLowerCase()));
+  }
+
   if(inputFields.category.mens == true ||
     inputFields.category.womens == true ||
     inputFields.category.jewellery == true ||
@@ -96,15 +105,15 @@ const filterProducts=()=>{
     displayProducts(filteredProducts);
 }
 
-let filterBtns=document.querySelectorAll(".filterBtn");
+// let filterBtns=document.querySelectorAll(".filterBtn");
 
-filterBtns[0].addEventListener("click",()=>{
-  filterProducts();
-})
-filterBtns[1].addEventListener("click",()=>{
-  filterProducts();
-  closeModal();
-})
+// filterBtns[0].addEventListener("click",()=>{
+//   filterProducts();
+// })
+// filterBtns[1].addEventListener("click",()=>{
+//   filterProducts();
+//   closeModal();
+// })
 
 let filters1 = document.querySelectorAll(".filters1");
 let filters2 = document.querySelectorAll(".filters2");
@@ -116,6 +125,7 @@ for(let i=0;i<4;i++){
       inputFields.category[categories[i]]=true;
     else
       inputFields.category[categories[i]]=false;
+    filterProducts();
   })
 }
 
@@ -125,6 +135,7 @@ for(let i=0;i<4;i++){
       inputFields.category[categories[i]]=true;
     else
       inputFields.category[categories[i]]=false;
+    filterProducts();
   })
 }
 
@@ -137,6 +148,7 @@ filters1[4].addEventListener("change",()=>{
     inputFields.ratingRange.isChanged=true;
   }
   inputFields.ratingRange.rate=filters1[4].value; 
+  filterProducts();
 })
 
 filters2[4].addEventListener("change",()=>{
@@ -147,6 +159,7 @@ filters2[4].addEventListener("change",()=>{
     inputFields.ratingRange.isChanged=true;
   }
   inputFields.ratingRange.rate=filters2[4].value; 
+  filterProducts();
 })
 
 //priceRange
@@ -157,6 +170,7 @@ for (let i = 5; i <= 8; i++) {
     } else {
       inputFields.priceRange[priceRange[i-5]] = false;
     }
+    filterProducts();
   });
 }
 
@@ -167,6 +181,7 @@ for (let i = 5; i <= 8; i++) {
     } else {
       inputFields.priceRange[priceRange[i-5]] = false;
     }
+    filterProducts();
   });
 }
 
@@ -216,8 +231,12 @@ resetFilters[0].addEventListener("click",()=>{
       range2:false,
       range3:false,
       range4:false
+    },
+    search:{
+      value:""
     }
   }
+  document.querySelector("#searchBar").value="";
   filterProducts();
 })
 
@@ -245,8 +264,41 @@ resetFilters[1].addEventListener("click",()=>{
       range2:false,
       range3:false,
       range4:false
+    },
+    search:{
+      value:""
     }
   }
+  document.querySelector("#searchBar").value="";
   filterProducts();
   closeModal();
 })
+
+//search functionality
+let searchbar = document.querySelector("#searchBar");
+searchbar.addEventListener("change", () => {
+  inputFields.search.value = searchbar.value;
+  filterProducts();
+});
+
+//home page to shop page by clicking categories
+
+let category = document.querySelectorAll(".category");
+for (let i = 0; i < category.length; i++) {
+  category[i].addEventListener("click", () => {
+    goToShop();
+    filters1[i].checked=true;
+    filters2[i].checked=true;
+    inputFields.category[categories[i]]=true;
+    filterProducts();
+  });
+}
+
+function goToShop() {
+  var event = new MouseEvent("click", {
+    bubbles: true,
+    cancelable: true,
+    view: window,
+  });
+  navLinks[1].dispatchEvent(event);
+}
