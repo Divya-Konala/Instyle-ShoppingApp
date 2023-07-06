@@ -23,7 +23,8 @@ const getUserDetails = () => {
   let profile = document.querySelector(".profile");
   loginBtn.classList.add("profile-hide");
   logoutBtn.classList.remove("profile-hide");
-  if (user.displayName != null) setUserName(user.displayName);
+  if(user!==null)
+   if (user.displayName != null) setUserName(user.displayName);
 };
 
 const setUserName = (name) => {
