@@ -18,7 +18,6 @@ login.addEventListener("click", () => {
 });
 
 signup.addEventListener("click", () => {
-  console.log("signup clicked");
   signup.classList.add("active");
   login.classList.remove("active");
   signupBtn.classList.remove("hide");
@@ -43,6 +42,7 @@ document.querySelector(".loginProfileBtn").addEventListener("click", () => {
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].value = "";
   }
+  document.querySelector(".navbar-collapse").classList.remove("show");
 });
 
 //making nav-items on nav-bar active except login and logout
@@ -53,6 +53,7 @@ for (let i = 0; i < navLinks.length - 2; i++) {
     navLinks[i].classList.add("active");
     hideCanvasItems();
     canvasItems[i].classList.remove("hide");
+    document.querySelector(".navbar-collapse").classList.remove("show");
   });
 }
 

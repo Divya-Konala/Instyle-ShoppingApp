@@ -29,7 +29,6 @@ let allProducts;
 fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
   .then((data) => {
-    // console.log(data);
     allProducts = [...data];
     displayProducts(data);
   })
@@ -381,7 +380,7 @@ const displayCartProducts = () => {
   cart_catalog.innerHTML = "";
   let cartItems = JSON.parse(localStorage.getItem("InStyle_CartItems")) || [];
   if (cartItems.length === 0) {
-    cart_catalog.innerHTML = `<span class="empty_cart">Your Cart is Empty</span> <i class="fa-solid fa-cart-shopping empty_cart"></i><p class="empty_cart_addItems">add items to it now</p><button class="btn btn-primary" onclick="goToShop()">Shop</button>`;
+    cart_catalog.innerHTML = `<div class="empty_cart"><span>Your Cart is Empty</span> <i class="fa-solid fa-cart-shopping"></i><p class="empty_cart_addItems">add items to it now</p><button class="btn btn-primary" onclick="goToShop()">Shop</button></div>`;
     document.querySelector(".price_list").classList.add("hide");
   } else {
     document.querySelector(".price_list").classList.remove("hide");

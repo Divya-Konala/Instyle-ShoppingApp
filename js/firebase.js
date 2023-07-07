@@ -18,20 +18,18 @@ const emailRegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
 const pwdRegex =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-const getUserDetails = () => {
-  let user = firebase.auth().currentUser;
-  let profile = document.querySelector(".profile");
-  loginBtn.classList.add("profile-hide");
-  logoutBtn.classList.remove("profile-hide");
-  if(user!==null)
-   if (user.displayName != null) setUserName(user.displayName);
+const getUserDetails = (name) => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      let profile = document.querySelector(".profile");
+      loginBtn.classList.add("profile-hide");
+      logoutBtn.classList.remove("profile-hide");
+      (name!==undefined) ?setUserName(name):setUserName(user.displayName);
+    } 
+  });
 };
 
-const setUserName = (name) => {
-  greetings.textContent = "Hi " + name;
-};
-
-// getUserDetails();
+getUserDetails();
 
 document.querySelector(".signupBtn").addEventListener("click", () => {
   let name = document.querySelector(".fullName").value;
@@ -45,8 +43,8 @@ document.querySelector(".signupBtn").addEventListener("click", () => {
       .then((userCredential) => {
         const user = userCredential.user;
         closeModal();
-        getUserDetails();
-        setUserName(name);
+        getUserDetails(name);
+        // setUserName(name);
         return user.updateProfile({
           displayName: name,
         });
@@ -60,27 +58,26 @@ document.querySelector(".signupBtn").addEventListener("click", () => {
 document.querySelector(".loginBtn").addEventListener("click", () => {
   let email = document.querySelector(".email").value;
   let password = document.querySelector(".password").value;
-  if(email!=="" && password!==""){
+  if (email !== "" && password !== "") {
     firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      closeModal();
-      getUserDetails();
-    })
-    .catch((error) => {
-      showToast(error.message);
-    });
-  }else{
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        closeModal();
+        getUserDetails();
+        showToast("user logged in successfully!");
+      })
+      .catch((error) => {
+        showToast(error.message);
+      });
+  } else {
     showToast("Field cannot be empty");
   }
-  
 });
 
 document
   .getElementById("google-signin-button")
   .addEventListener("click", () => {
-    console.log("clicked");
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
@@ -95,20 +92,25 @@ document
   });
 
 logoutBtn.addEventListener("click", () => {
-  console.log("logout clicked");
+  document.querySelector(".navbar-collapse").classList.remove("show");
   firebase
     .auth()
     .signOut()
     .then(() => {
-      console.log("logged out");
       logoutBtn.classList.add("profile-hide");
       loginBtn.classList.remove("profile-hide");
       greetings.textContent = "";
+      showToast("user logged out");
     })
     .catch((error) => {
       showToast(error.message);
     });
 });
+
+const setUserName = (name) => {
+  greetings.textContent = "Hi " + name;
+};
+
 
 function closeModal() {
   var element = document.querySelector(".btn-close");
