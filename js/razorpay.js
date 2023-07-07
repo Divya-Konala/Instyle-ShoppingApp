@@ -6,7 +6,6 @@
 
 document.getElementById("payBtn").onclick = function (e) {
     let user = firebase.auth().currentUser;
-    console.log(user);
     if(user!==null) makePayment(e);
     else showToast("Please login to checkout!!")
 };
